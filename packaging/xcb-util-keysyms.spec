@@ -10,6 +10,7 @@ Url:            http://xcb.freedesktop.org/
 #Git-Clone:	git://anongit.freedesktop.org/xcb/util
 #Git-Web:	http://cgit.freedesktop.org/xcb/util/
 Source:         %name-%version.tar.bz2
+Source1001: 	xcb-util-keysyms.manifest
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 #git#BuildRequires:	autoconf >= 2.59c, automake, libtool
 BuildRequires:  pkgconfig
@@ -55,6 +56,7 @@ in %lname.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure --disable-static
@@ -68,10 +70,12 @@ make %{?_smp_mflags}
 %postun -n %lname -p /sbin/ldconfig
 
 %files -n %lname
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %_libdir/libxcb-keysyms.so.1*
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %_includedir/xcb
 %_libdir/libxcb-keysyms.so
