@@ -1,0 +1,8 @@
+Change-Id: I49668a482dbb87824e7ec55f0ac5414fb2c03416
+Code-Review+2: Ryan Ware <ware@linux.intel.com>
+Verified+1: Ryan Ware <ware@linux.intel.com>
+Submitted-by: Ryan Ware <ware@linux.intel.com>
+Submitted-at: Mon, 08 Jul 2013 09:38:33 -0700
+Reviewed-on: https://review.tizen.org/gerrit/4994
+Project: platform/upstream/xcb-util-keysyms
+Branch: refs/heads/tizen
