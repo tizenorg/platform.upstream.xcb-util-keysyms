@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           xcb-util-keysyms
 %define lname	libxcb-keysyms
 Version:        0.3.9
@@ -18,6 +20,10 @@ BuildRequires:  pkgconfig(xcb) >= 1.4
 BuildRequires:  pkgconfig(xcb-proto) >= 1.6
 BuildRequires:  pkgconfig(xorg-macros) >= 1.6.0
 BuildRequires:  pkgconfig(xproto) >= 7.0.8
+
+%if !%{with x}
+ExclusiveArch:
+%endif
 
 %description
 The XCB util modules provide a number of libraries which sit on top
